@@ -1,0 +1,13 @@
+﻿{
+	{
+		'title': "Lorem ipsum",
+		'props': {
+			'prop': 'value',
+			'prop': 'value'
+		},
+		'rate': "5/5",
+		'price': 10,
+		'curency': "$",
+		'description': "Lorem ipsum dolor sit amet, consectetur adipiscing elit."		
+	}
+}

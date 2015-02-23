@@ -1,0 +1,64 @@
+﻿<div class="product-list col_0 clearfix">
+    <div class="product-col" ng-repeat="col in cols">
+        <div class="product {{prod.status}}" ng-repeat="prod in col | filter: pageSearch">
+            <div class="product-image clearfix" ng-style="{'background-image': 'url({{checkProdImage(prod.image)}})'}">
+                <div class="product-rate-price">
+                    <div class="product-rate">
+                        <span>{{prod.rate}}</span>
+                    </div>
+                    <div class="product-curency">
+                        <span>{{prod.curency}}</span>
+                    </div>
+                    <div class="product-price">
+                        <span>{{prod.price}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-text-cover">
+                <div class="product-title">
+                    <h3>{{prod.title}}</h3>
+                            
+                    <div class="product-btn-cover clearfix">
+                        <div class="product-btn add-to-basket" select-product-btn="{{prod.col}},{{$index}}" data-info="Add to basket"></div>
+                        <!--<div class="product-btn read-more" data-info="Read more"></div>-->
+                    </div>
+                </div>
+
+                <ul class="product-prop-list">
+                    <li class="product-pror-item" ng-repeat="(key, value) in prod.props">{{key}} - {{value}}</li>
+                </ul>
+
+                <div class="product-description">
+                    {{prod.description}}
+                </div>
+            </div>
+
+            <div unselect-product-btn="{{prod.col}},{{$index}}" class="unselect-cover"></div>
+        </div>
+    </div>
+</div>
+
+<div id="buy-list" class="scrollable" ng-show="isBuyListActive">
+    <form buy-form class="cover">
+        <div close-buy-list-btn class="close-btn"></div>
+
+        <h2>Buy List</h2>
+
+        <div class="client-data clearfix">
+            <input class="pull-left" ng-model="userName" type="text" placeholder="Name" />
+            <input class="pull-right" ng-model="userTelephone" type="text" placeholder="Telephone" />
+        </div>
+
+        <div class="product-list">
+            <div class="product-item clearfix" ng-repeat="prod in selectedProducts">
+                <div class="pull-left product-title">{{prod.title}}</div>
+                <div class="pull-right">{{prod.curency}}{{prod.price}}</div>
+            </div>
+        </div>
+
+        <div class="control-cover">
+            <div close-buy-list-btn class="cancel-btn alpha-btn">Cancel</div>
+            <input type="submit" value="Send" class="send-btn alpha-btn" />
+        </div>
+    </form>
+</div>

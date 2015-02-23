@@ -1,0 +1,12 @@
+﻿<h1 class="title"></h1>
+
+<div class="main-cover content">
+    <ul class="type-list">
+        <li class="type-item" ng-repeat="item in info">
+            <div class="title" type-toggle>{{item.title}}</div>
+            <div class="hidden">
+                <p ng-repeat="p in item.description">{{p.text}}</p>
+            </div>
+        </li>
+    </ul>
+</div>

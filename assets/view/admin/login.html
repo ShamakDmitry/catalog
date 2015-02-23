@@ -1,0 +1,19 @@
+﻿<div class="login-cover">
+    <div class="logotype">
+        <h1>
+            Sign In
+        </h1>
+    </div>
+    <div class="form-cover">
+        <div class="error login-error" ng-show="loginErrorText">{{loginErrorText}}</div>
+        <form login-form autocomplete="on">
+            <input class="name-field" type="text" autocomplete="on" placeholder="Name" ng-model="userName" />
+            <input class="password-field" type="password" placeholder="Password" ng-model="userPassword" />
+            <input class="submit-btn" type="submit" value="Sign In" />
+        </form>
+    </div>
+    <div class="cover clearfix">
+        <a class="leave-btn pull-left" href="/">Leave admin page</a> 
+        <a class="registrate-btn pull-right" href="/admin#/registration">Register</a>
+    </div>
+</div>

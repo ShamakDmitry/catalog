@@ -1,0 +1,79 @@
+﻿<div id="header" class="">
+        <div class="cover clearfix">
+            <div class="control pull-left clearfix">
+                <div ng-show="user.name" class="control-prop-elem username pull-left">{{user.name}}</div>
+                <div ng-show="user.name" class="control-prop-elem access-icons pull-left">
+                    <div ng-repeat="i in user.access" class="access-icon {{access_icons[i].icon}}"></div>
+                </div>
+            </div>
+            <div class="control right-control pull-right">
+                <div class="btn">
+                    <a class="leave-btn" href="/">Main page</a>
+                </div>                
+
+                <div class="btn">
+                    <a class="order-btn" href="/admin#/order">Orders</a>
+                </div> 
+
+                <div class="hidden-btns">
+                    <div class="btn hidden-toggle"></div>
+
+                    <div class="hidden-content">
+                        <div db-btn="import" class="btn import alpha-btn"></div>
+                        <div db-btn="drop" class="btn drop alpha-btn"></div>
+
+                        <div logout-btn class="logout btn alpha-btn"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div id="sidebar" class="scrollable">
+        <ul class="list">
+            <li sidebar-item="{{item}}" class="{{item}}" ng-repeat="item in sidebarList">
+                <div class="cover">{{item}}</div>
+                <div ng-if="checkActionAccess('edit')" sidebar-add-btn="{{item}}" class="add-item-btn"></div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="content" class="">
+        <div id="data-list" class="scrollable" ng-show="dataList">
+            <div class="cover">
+                <ul class="list">
+                    <li datalist-item="{{item}}" ng-repeat="item in dataList">{{$index}} - {{(item.name) ? item.name : item.title}}</li>
+                </ul>
+            </div>
+        </div>
+        <div id="edit-block" ng-model="selectedItem" ng-show="selectedItem">
+            <div edit-btn="edit" ng-hide="editMode" ng-if="checkActionAccess('edit')" class="toggle-edit-btn">Edit</div>
+
+            <div class="edit-btns-cover" ng-show="editMode">
+                <div edit-btn="save" class="edit-btn">Save</div>
+                /
+                <div edit-btn="cancel" class="edit-btn">Cancel</div>
+                /
+                <div edit-btn="delete" class="edit-btn">Delete</div>
+            </div>
+
+            <div close-selected-item="selectedItem" class="close-btn">Close</div>
+            <div class="scrollable-cover scrollable">
+                <div id="edit-fields-container" class="cover">
+                    <div class="item-block" ng-repeat="(key, item) in selectedItem">
+                            <label>{{key}}</label>
+                            <input class="item-value" ng-disabled="!editMode" type="text" item-type="{{key}}" value="{{getFormatedViewOfField(item)}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

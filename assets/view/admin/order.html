@@ -1,0 +1,74 @@
+﻿<div id="header" class="">
+        <div class="cover clearfix">
+            <div class="control pull-left clearfix">
+                <div ng-show="user.name" class="control-prop-elem username pull-left">{{user.name}}</div>
+            </div>
+            <div class="control right-control pull-right">
+                <div class="btn">
+                    <a class="leave-btn" href="/">Main page</a>
+                </div>   
+
+                <div class="btn">
+                    <a class="admin-panel-btn" href="/admin#/logged">Admin</a>
+                </div> 
+                             
+                <div logout-btn class="logout btn">Logout</div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="content" class="order-cover">
+        <div id="data-list" class="scrollable" ng-show="dataList">
+            <div class="cover">
+                <ul class="list">
+                    <li datalist-item="{{item}}" ng-repeat="item in dataList">{{item.date}}</li>
+                </ul>
+            </div>
+        </div>
+        <div id="edit-block" ng-model="selectedItem" ng-show="selectedItem">
+            <div edit-btn="edit" ng-hide="editMode" class="toggle-edit-btn">Edit</div>
+
+            <div class="edit-btns-cover" ng-show="editMode">
+                <div edit-btn="save" class="edit-btn">Save</div>
+                /
+                <div edit-btn="cancel" class="edit-btn">Cancel</div>
+                /
+                <div edit-btn="delete" class="edit-btn">Delete</div>
+            </div>
+
+            <div close-selected-item="selectedItem" class="close-btn">Close</div>
+            <div class="scrollable-cover scrollable">
+                <div id="edit-fields-container" class="cover">
+                    <div class="item-block">
+                            <label>Name</label>
+                            <input class="item-value" item-type="name" ng-disabled="!editMode" type="text" value="{{selectedItem.name}}" />
+                    </div>
+                    <div class="item-block">
+                            <label>Address</label>
+                            <input class="item-value" item-type="address" ng-disabled="!editMode" type="text" value="{{selectedItem.address}}" />
+                    </div>
+                    <div class="item-block">
+                            <label>Telephone</label>
+                            <input class="item-value" item-type="telephone" ng-disabled="!editMode" type="text" value="{{selectedItem.telephone}}" />
+                    </div>
+                    <div class="item-block" ng-repeat="item in selectedItem.order">
+                        <div ng-hide="item.loaded">"loading..."</div>
+                        <div ng-if="item.loaded" class="clearfix">
+                            <div class="pull-left">{{item.title}}</div>
+                            <div class="pull-right">{{item.price}}</div>
+                        </div>
+                    </div>
+
+                    <div class="total-price" ng-show="total">Total: {{total}}.000</div>
+                </div>
+            </div>
+        </div>
+    </div><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>

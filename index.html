@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <title>BSUIR CW</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <script src="/assets/js/jquery.min.js"></script>
+
+    <script src="/assets/js/script.js"></script>
+
+    <!--Angular START-->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/js/Angular/Main/MainSRVC.js"></script>
+    <script src="assets/js/Angular/Main/MainCTRL.js"></script>
+    <script src="assets/js/Angular/Main/MainCNFG.js"></script>
+    <script src="assets/js/Angular/Main/MainDRCTV.js"></script>
+    <!--NESTED START-->
+    <script src="assets/js/Angular/Nested/HomeCTRL.js"></script>
+    <script src="assets/js/Angular/Nested/AboutusCTRL.js"></script>
+    <script src="assets/js/Angular/Nested/GalleryCTRL.js"></script>
+    <script src="assets/js/Angular/Nested/InfoCTRL.js"></script>
+    <script src="assets/js/Angular/Nested/ServicesCTRL.js"></script>
+    <script src="assets/js/Angular/Nested/ContactsCTRL.js"></script>
+    <!--NESTED END-->
+    <!--Product START-->
+    <script src="assets/js/Angular/Product/ProductCTRL.js"></script>
+    <script src="assets/js/Angular/Product/ProductDRCTV.js"></script>
+    <!--Product END-->
+    <!--Angular END-->
+</head>
+<body ng-controller="Main">
+    <div id="side-bar">
+        <div id="nav">
+            <div class="logotype clearfix"></div>
+            <ul class="nav-links">
+                <li ng-repeat="link in navLinks">
+                    <a class="nav-link {{link.icon}}" ng-style="{'background-image': 'url(/assets/imgs/{{link.icon}}.png)'}"  nav-link ng-href="{{link.url}}"><span>{{link.title}}</span></a>
+                </li>
+            </ul>
+        </div>
+        <div id="footer">
+            <div toggle-nav class="resize-btn"></div>
+        </div>
+    </div>
+
+    <div id="header" class="clearfix">
+        <div class="left-section">
+            <div class="view-types clearfix">
+                <div class="view-btn first-type"></div>
+                <div class="view-btn second-type"></div>
+            </div>
+            <div class="search-block">
+                <input type="text" placeholder="Find on page..." ng-model="pageSearch"/>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="basket" ng-show="canShowBasket" basket-btn="">{{basket.num}}</div>
+        </div>
+    </div>
+
+    <div id="content" ng-view class="cover" resize></div>
+</body>
+<script src="assets/js/script.js"></script>
+</html>

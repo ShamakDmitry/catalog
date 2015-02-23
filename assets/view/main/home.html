@@ -1,0 +1,17 @@
+﻿<div class="home-container">
+    <div class="date-time">
+        <h1>{{date}}</h1>
+    </div>
+
+    <div class="news-cover">
+        <ul class="home-news" ng-repeat="item in newslist">
+            <li class="news-label">{{item.label}}</li>
+            <li ng-repeat="news in item.news | filter: pageSearch">
+                <a class="news" href="">
+                    <span>{{news.title}}</span>
+                    <span class="event-time">{{news.time}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

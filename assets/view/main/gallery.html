@@ -1,0 +1,15 @@
+﻿<h1 class="title"></h1>
+
+<div class="main-cover">
+    <div class="gallery-cover text-center">
+        <div ng-if="mainImage" style="background-image: url({{mainImage}});" class="main-image"></div>
+            
+        <div class="gallery-list">
+            <div class="gallery-row">
+                <div class="cover clearfix">
+                    <div class="gallery-image" ng-style="{'background-image': 'url({{img}})'}" ng-repeat="img in gallery track by $index" gallery-img="{{img}}"></div>
+                </div>
+            </div>   
+        </div> 
+    </div>
+</div>

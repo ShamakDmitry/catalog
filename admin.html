@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+    <title>Admin panel</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/fonts.css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <script src="assets/js/jquery.min.js"></script>
+
+    <!--Angular START-->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/js/Angular/Main/MainSRVC.js"></script>
+
+    <script src="assets/js/Angular/Admin/AdminCTRL.js"></script>
+    <script src="assets/js/Angular/Admin/AdminCNFG.js"></script>
+    <script src="assets/js/Angular/Admin/AdminDRCTV.js"></script>
+
+    <script src="assets/js/Angular/Admin/LoginCTRL.js"></script>
+    <script src="assets/js/Angular/Admin/RegistrationCTRL.js"></script>
+    <script src="assets/js/Angular/Admin/LoggedCTRL.js"></script>
+    <script src="assets/js/Angular/Admin/OrderCTRL.js"></script>
+
+    <!--Angular END-->
+</head>
+<body ng-controller="Admin">
+    <ng-view></ng-view>
+</body>
+<script src="assets/js/script.js"></script>
+</html>

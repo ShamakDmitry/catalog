@@ -1,0 +1,24 @@
+﻿<div class="registration-cover">
+    <div class="logotype">
+        <h1>
+            Registration
+        </h1>
+    </div>
+    <div class="form-cover">
+        <div class="error login-error" ng-show="loginErrorText">{{registrationErrorText}}</div>
+        <form registration-form autocomplete="on">
+            <input class="id-field" type="text" autocomplete="on" placeholder="Login" ng-model="userId" />
+            <input class="name-field divided" type="text" autocomplete="on" placeholder="Name" ng-model="userName" />
+            <input class="password-field" type="password" placeholder="Password" ng-model="userPassword" />
+            <input class="password-field" type="password" placeholder="Confirm Password" ng-model="userConfirmPassword" />
+
+             <input group-field class="group-field divided" type="text" placeholder="Group" ng-model="groupName" />
+             <input class="grouppass-field" type="password" ng-show="groupName" placeholder="Group password" ng-model="groupPassword" />
+            <input class="submit-btn divided" type="submit" value="Registrate" />
+        </form>
+    </div>
+    <div class="cover clearfix">
+        <a class="leave-btn pull-left" href="/">Leave admin page</a> 
+        <a class="registrate-btn pull-right" href="/admin">LogIn</a>
+    </div>
+</div>

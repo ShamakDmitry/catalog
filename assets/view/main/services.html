@@ -1,0 +1,14 @@
+﻿<h1 class="title">Наши услуги</h1>
+
+<div class="main-cover" id="contacts">
+    <div class="content">
+        <li ng-repeat="service in services">
+            <h3>{{service.title}}</h3>
+            <div class="description">
+                 <div class="" ng-repeat="item in service.description">
+                     <p>{{item.text}}</p>
+                 </div>
+            </div>
+        </li>
+    </div>
+</div>
